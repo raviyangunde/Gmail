@@ -1,0 +1,43 @@
+package assignment;
+
+import org.openqa.selenium.By; 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+ 
+public class ToolTipTesting (
+
+public static void main(String[] args) {
+
+System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+
+WebDriver driver new ChromeDriver(); driver manage().window().maximize();
+
+driver.get("https://demo.actitime.com/login.do");
+
+String expectedToolT = "Do not select if this computer is shared"; 
+String actualToolT driver.findElement(By.id("keepLoggedInCheckBox")).getAttribute("title");
+
+System.out.println("expectedToolT: + expected ToolT); 
+System.out.println(actual ToolT: "actualToolT);
+
+   if (actualToolT != null) {
+
+       if (actualToolT.equals(expectedToolT)) [ System.out.println("PASS:t ToolT text is correct");
+
+        } 
+        else if (actualToolT.isEmpty()) {
+
+            System.out.println("AIL: ToolT text is empty");
+
+            else { 
+      
+             System.out.println("FAIL:s ToolT attribute is Incorrect");
+
+            }
+        }
+
+        driver.quit();
+
+     }
+  }
